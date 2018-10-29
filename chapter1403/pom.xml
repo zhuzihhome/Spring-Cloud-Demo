@@ -7,9 +7,9 @@
 	<packaging>pom</packaging>
 
 	<modules>
-	<module>chapter1403-eureka-server</module>
-	<module>chapter1403-service-auth</module>
-	<module>chapter1403-service-hi</module>
+		<module>chapter1403-eureka-server</module>
+		<module>chapter1403-service-auth</module>
+		<module>chapter1403-service-hi</module>
 	</modules>
 
 	<parent>
