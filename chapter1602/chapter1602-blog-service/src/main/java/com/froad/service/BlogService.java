@@ -33,7 +33,7 @@ public class BlogService {
 	}
 	
 	public List<Blog> findBlogs(String username) {
-		return blogDao.findBlogs(username);
+		return blogDao.findByUsername(username);
 	}
 	
 	public BlogDetailDTO findBlogDetail(Long id) {

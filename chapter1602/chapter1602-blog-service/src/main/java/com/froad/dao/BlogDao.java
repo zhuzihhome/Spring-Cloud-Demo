@@ -12,6 +12,6 @@ import com.froad.entity.Blog;
  */
 public interface BlogDao extends JpaRepository<Blog, Long> {
 
-	List<Blog> findBlogs(String username);
+	List<Blog> findByUsername(String username);
 
 }
