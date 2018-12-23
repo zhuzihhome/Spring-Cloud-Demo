@@ -38,7 +38,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	public void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable()
 			.authorizeRequests()
-			.regexMatchers(".*swagger.*", ".*v2.*", ".*webjars.*", "/user/login.*", "/user/registry.*", "/user/test.*").permitAll()
+			.regexMatchers(".*swagger.*", ".*v2.*", ".*webjars.*", "/user/login.*", "/user/register.*", "/user/test.*").permitAll()
 			.antMatchers("/**").authenticated();
 	}
 
