@@ -3,6 +3,7 @@ package com.froad.entity;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,9 +12,8 @@ import javax.persistence.Id;
  * @author ZHUZIHUI
  * @date 2018年10月20日
  */
+@Entity
 public class Blog implements Serializable {
-
-	private static final long serialVersionUID = -1668144543945833423L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -59,5 +59,4 @@ public class Blog implements Serializable {
 	public void setSuject(String suject) {
 		this.suject = suject;
 	}
-
 }
