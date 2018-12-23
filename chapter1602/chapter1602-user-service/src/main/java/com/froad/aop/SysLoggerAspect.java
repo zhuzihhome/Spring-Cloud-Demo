@@ -47,10 +47,9 @@ public class SysLoggerAspect {
 			sysLog.setOperation(sysLogger.value());
 		}
 		// 设置请求方法名
-		String packageName = joinPoint.getTarget().getClass().getPackage().getName();
 		String className = joinPoint.getTarget().getClass().getName();
 		String methodName = signature.getName();
-		sysLog.setMethod(packageName + "." + className + "." + className + "." + methodName);
+		sysLog.setMethod(className + "." + methodName + "()");
 		// 设置请求的参数
 		Object[] args = joinPoint.getArgs();
 		String params = "";
