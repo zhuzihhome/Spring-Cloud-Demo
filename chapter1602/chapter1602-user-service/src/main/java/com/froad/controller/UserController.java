@@ -29,9 +29,9 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@PostMapping("/register")
-	@SysLogger("login")
 	@ApiOperation(value = "用户注册", notes = "username and password is required")
+	@PostMapping("/register")
+	@SysLogger("register")
 	public User register(@RequestBody User user) {
 		// 参数判断，省略
 		// 判断用户名是否存在，省略
@@ -39,18 +39,18 @@ public class UserController {
 		return userService.createUser(user);
 	}
 
+	@ApiOperation(value = "用户登录", notes = "username and password is required")
 	@PostMapping("/login")
 	@SysLogger("login")
-	@ApiOperation(value = "用户登录", notes = "username and password is required")
 	public RespDTO login(@RequestParam("username") String username, @RequestParam("password") String password) {
 		// 参数判断，省略
 		return userService.login(username, password);
 	}
 
+	@ApiOperation(value = "根据用户名获取用户信息", notes = "根据用户名获取用户信息")
 	@PostMapping("/{username}")
 	@PreAuthorize("hasRole('USER')")
 	@SysLogger("getUserInfo")
-	@ApiOperation(value = "根据用户名获取用户信息", notes = "根据用户名获取用户信息")
 	public RespDTO getUserInfo(@PathVariable("username") String username) {
 		UserDetails user = userService.getUserInfo(username);
 		return RespDTO.onSuc(user);
