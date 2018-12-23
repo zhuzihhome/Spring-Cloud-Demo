@@ -1,32 +1,51 @@
 package com.froad.entity;
 
+import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * @author ZHUZIHUI
  * @date 2018年11月11日
  */
-public class SysLog {
+@Entity
+public class SysLog implements Serializable {
 
-	private String id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	/** 用户名 */
+	@Column
 	private String username;
 	/** 用户操作 */
+	@Column
 	private String operation;
 	/** 请求方法 */
+	@Column
 	private String method;
 	/** 请求参数 */
+	@Column
 	private String params;
 	/** IP地址 */
+	@Column
 	private String ip;
 	/** 创建时间 */
+	@Column
 	private Date createDate;
 
-	public String getId() {
+	public SysLog() {
+	}
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -77,5 +96,4 @@ public class SysLog {
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-
 }
